@@ -1,44 +1,24 @@
 import { useState } from "react"
 
 const Contador=()=>{
-    var [pantalla, setValor] = useState(0)
+    var [Pantalla1, setPantalla1] = useState(0)
     var pantalla2
     var operador
+    var numero 
+    // var [numero, setnumero] = useState(0)
 
-    const sumar =()=>{setValor(valor+1) }
-    const restar =()=>{setValor(valor-1) }
+    function Botones(props){
+        return(
+            <button type="button" className="btn btn-outline-success" onClick={()=> setPantalla1(Pantalla1+numero)}>{props.boton}</button>
+    )
+    }
+    function Pantalla(props){
+        return(
+            <p>{Pantalla1}</p>
+        )
+    }
     
-
-    const siete=()=>{
-        setValor(pantalla=7)
-    }
-    const seis=()=>{
-        setValor(pantalla=6)
-    }
-    const ocho=()=>{
-        setValor(pantalla=8)
-    }
-    const nueve=()=>{
-        setValor(pantalla=9)
-    }
-    const cero=()=>{
-        setValor(pantalla=0)
-    }
-    const uno=()=>{
-        setValor(pantalla=1)
-    }
-    const dos=()=>{
-        setValor(pantalla=2)
-    }
-    const tres=()=>{
-        setValor(pantalla=3)
-    }
-    const cuatro=()=>{
-        setValor(pantalla=4)
-    }
-    const cinco=()=>{
-        setValor(pantalla=5)
-    }
+    
     const mas=()=>{
         pantalla2 = pantalla
         
@@ -77,24 +57,24 @@ const Contador=()=>{
     return (
         <>
             <h3>Calculadora</h3>
-            <p>{pantalla}</p>
-            <p className="invisible">{}</p>
-            <button type="button" className="btn btn-outline-success" onClick={siete}>7</button>
-            <button type="button" className="btn btn-outline-success" onClick={ocho}>8</button>
-            <button type="button" className="btn btn-outline-success" onClick={nueve}>9</button>
-            <button type="button" className="btn btn-outline-success" onClick={divicion}>/</button><br />
-            <button type="button" className="btn btn-outline-success" onClick={cuatro}>4</button>
-            <button type="button" className="btn btn-outline-success" onClick={cinco}>5</button>
-            <button type="button" className="btn btn-outline-success" onClick={seis}>6</button>
-            <button type="button" className="btn btn-outline-success" onClick={multiplicacion}>*</button><br />
-            <button type="button" className="btn btn-outline-success" onClick={uno}>1</button>
-            <button type="button" className="btn btn-outline-success" onClick={dos}>2</button>
-            <button type="button" className="btn btn-outline-success" onClick={tres}>3</button>
-            <button type="button" className="btn btn-outline-success" onClick={menos}>-</button><br />
-            <button type="button" className="btn btn-outline-success" onClick={cero}>0</button>
-            <button type="button" className="btn btn-outline-success" onClick={mas}>+</button>
-            <button type="button" className="btn btn-outline-success" /*onClick={borrar}*/>x</button>
-            <button type="button" className="btn btn-outline-success" onClick={igual}>=</button>
+             <Pantalla></Pantalla>
+             <Botones boton="7">{numero}</Botones>
+             <Botones boton="8">{numero = 8}</Botones>
+             <Botones boton="9">{numero = 9}</Botones>
+             <Botones boton="/"></Botones><br />
+             <Botones boton="4">{numero = 4}</Botones>
+             <Botones boton="5">{numero = 5}</Botones>
+             <Botones boton="6">{numero = 6}</Botones>
+             <Botones boton="*"></Botones><br />
+             <Botones boton="1">{numero = 1}</Botones>
+             <Botones boton="2">{numero = 2}</Botones>
+             <Botones boton="3">{numero = 3}</Botones>
+             <Botones boton="-"></Botones><br />
+             <Botones boton="0">{numero = 0}</Botones>
+             <Botones boton="."></Botones>
+             <Botones boton="+"></Botones>
+             <Botones boton=">"></Botones>
+             
         </>
     )
 }
